@@ -6,7 +6,7 @@ const jwt         = require("jsonwebtoken")
 controller.user = {}
 
 controller.getUsers = async (req, res) =>{
-  const users = await pool.query("SELECT * FROM users")
+  const users = await pool.query("SELECT * FROM users LIMIT 3")
   res.render("index.ejs", {users: users[0]})
 }
 
