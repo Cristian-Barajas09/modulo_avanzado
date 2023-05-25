@@ -1,0 +1,43 @@
+<%- include("partials/head.ejs", {title: "Index"}) %>
+<body>
+  <% if(users.length) { %>
+    <h1>Users:</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>Conectado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <tr>
+            <td name="id"><%= user.id %></td>
+            <td name="name"><%= user.name %></td>
+            <td name="age"><%= user.age %></td>
+            <td name="email"><%= user.email %></td>
+            <td name="rol"><%= user.rol %></td>
+            <% if(user.status) { %>
+              <td id="status">Activo</td>
+            <% } else { %>
+              <td id="status">Inactivo</td>
+            <% } %>
+            <td></td>
+            <td><button><a href="/update/<%=user.id%>">Actualizar</a></button></td>
+            <td><button><a href="/delete/<%=user.id%>">Eliminar</a></button></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h1>No hay usuarios:( </h1>
+  <% } %>
+  <a href="/create">Registrarme</a>
+  <a href="/signin">Iniciar sesion</a>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+</html>

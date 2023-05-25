@@ -1,0 +1,11 @@
+<%- include('partials/head.ejs', {title: "Update"}) %>
+<body>
+  <form action="/update" method="post">
+    <input type="text" name="name" value="<%= name %>">
+    <input type="number" name="age" value="<%= age %>">
+    <input type="email" name="email" value="<%= email %>">
+    <input type="password" name="password" value="<%= password %>">
+    <input type="text" name="rol" value="<%= rol %>">
+    <button type="submit">Actualizar</button>
+  </form>
+</body>
