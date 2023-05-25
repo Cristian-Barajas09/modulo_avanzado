@@ -3,23 +3,6 @@ const pool        = require("../models/mysql.connection.js")
 const bcrypt      = require("bcrypt")
 const jwt         = require("jsonwebtoken")
 
-// const users = [
-//   {
-//     id: 1,
-//     nombre: "Joshua",
-//     edad: 18
-//   },
-//   {
-//     id: 2,
-//     nombre: "Anyi",
-//     edad: 20
-//   },{
-//     id: 3,
-//     nombre: "carlos",
-//     edad: 18
-//   }
-// ]
-
 controller.user = {}
 
 controller.getUsers = async (req, res) =>{
