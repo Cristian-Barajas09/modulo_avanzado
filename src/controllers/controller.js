@@ -17,9 +17,7 @@ controller.getUserByToken = async (req, res) => {
     if(!user_token){
       return res.status(400).redirect("/signin")
     }
-  
     const user = jwt.verify(user_token, "supersecreto")
-  
     if(user){
       controller.user = user
       res.status(200).render("user.ejs", {user: controller.user})
